@@ -1,5 +1,8 @@
+using BondEvaluator.Application.Helpers;
+using BondEvaluator.Application.Helpers.Interface;
 using BondEvaluator.Application.Services;
 using BondEvaluator.Infrastructure.DependencyInjection;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IBondEvaluatorService, BondEvaluatorService>();
+builder.Services.AddSingleton<IRateParser, RateParser>();
 builder.Services.RegisterExternalServices();
 
 var app = builder.Build();
@@ -21,6 +25,19 @@ if (app.Environment.IsDevelopment())
 }
 app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Swagger"));
 app.UseHttpsRedirection();
+
+app.UseExceptionHandler(errorApp =>
+{
+    errorApp.Run(async context =>
+    {
+        context.Response.StatusCode = 500;
+        context.Response.ContentType = "application/json";
+
+        var error = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+        var response = new { error = "Unexpected error", detail = error?.Message };
+        await context.Response.WriteAsJsonAsync(response);
+    });
+});
 
 app.UseAuthorization();
 

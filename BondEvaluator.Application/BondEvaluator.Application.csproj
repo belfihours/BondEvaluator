@@ -12,4 +12,8 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BondEvaluator.Domain\BondEvaluator.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,4 +1,16 @@
-﻿namespace BondEvaluator.Application.Models;
+﻿using BondEvaluator.Domain.Models;
 
-public record BondInDto(int Id, string BondType);
-public record BondOutDto(int Id, string BondType);
+namespace BondEvaluator.Application.Models;
+
+public record BondInDto(
+    string BondId,
+    string Issuer,
+    string Rate,
+    int FaceValue,
+    PaymentFrequency PaymentFrequency,
+    string Rating,
+    BondType Type,
+    double YearsToMaturity,
+    double DiscountFactor,
+    string DeskNotes);
+

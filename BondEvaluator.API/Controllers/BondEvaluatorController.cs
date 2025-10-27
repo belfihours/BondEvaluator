@@ -17,15 +17,15 @@ public class BondEvaluatorController : ControllerBase
     }
 
     [HttpPost(Name = "GetBondEvaluation")]
-    public async Task<IActionResult> GetBondEvaluation(IFormFile file)
+    public async Task<IActionResult> GetBondEvaluation(IFormFile file, CancellationToken ct)
     {
         // file cannot be null because nullable reference types is enabled in configuration
         if (file.Length == 0)
             return BadRequest("No file uploaded.");
         await using var stream = file.OpenReadStream();
-        var res = await _bondEvaluatorService.GetBondEvaluation(stream);
+        var res = await _bondEvaluatorService.GetBondEvaluation(stream, ct);
         return File(
-            fileStream: stream,
+            fileStream: res,
             contentType: "text/csv",
             fileDownloadName: "export.csv"
         );
