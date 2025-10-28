@@ -5,10 +5,9 @@ namespace BondEvaluator.Application.Helpers;
 
 public class RateParser : IRateParser
 {
-    //TODO: TEST THAT
     /// <summary>
     /// Try to parse input rates in final rates
-    /// Percentages are interpretated as fractions, so 1.5% => 0.015
+    /// Percentages are interpreted as fractions, so 1.5% => 0.015
     /// </summary>
     /// <param name="text"> Expected to be in form "Inflation+{number}%" or "{number}%" </param>
     /// <param name="inflationBase"> Inflation to add in case of Inflation-linked rates </param>
