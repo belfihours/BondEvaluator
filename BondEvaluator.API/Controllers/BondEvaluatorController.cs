@@ -1,4 +1,6 @@
+using System.Net;
 using BondEvaluator.Application.Services;
+using BondEvaluator.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BondEvaluator.API.Controllers;
@@ -16,7 +18,11 @@ public class BondEvaluatorController : ControllerBase
         _bondEvaluatorService = bondEvaluatorService;
     }
 
-    [HttpPost(Name = "GetBondEvaluation")]
+    [HttpPost]
+    [Route("bondevaluations")]
+    [ProducesResponseType(typeof(FileStreamResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
+    [ProducesResponseType(typeof(string), (int)HttpStatusCode.InternalServerError)]
     public async Task<IActionResult> GetBondEvaluation(IFormFile file, CancellationToken ct)
     {
         // file cannot be null because nullable reference types is enabled in configuration
