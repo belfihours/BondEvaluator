@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Text;
 using BondEvaluator.Application.Exceptions;
+using BondEvaluator.Application.Helpers;
 using BondEvaluator.Application.Helpers.Interface;
 using BondEvaluator.Application.Models;
 using BondEvaluator.Domain.Models;
@@ -27,20 +28,31 @@ public class StreamMapper : IStreamMapper
 
     public async Task<IEnumerable<BondInDto>> ReadStreamAsync(Stream stream, CancellationToken ct = default)
     {
-        var rows = new List<BondInDto>();
-
         using var reader = new StreamReader(stream);
-        var header = await reader.ReadLineAsync(ct);
-        if (!ExpectedHeader.Equals(header, StringComparison.InvariantCultureIgnoreCase))
-        {
-            _logger.LogError("Expected header to be: {ExpectedHeader}, " +
-                             "but received: {ActualHeader}.",
-                ExpectedHeader,
-                header);
-            throw new BondParserException("Expected valid header");
-        }
-        
+        await HandleHeader(reader, ct);
+        var rows = await GetBondInDtoRows(reader, ct);
+        return rows;
+    }
+
+    public async Task<Stream> WriteStreamAsync(IEnumerable<BondOutDto> dtos, CancellationToken ct = default)
+    {
+        var header =
+            string.Join(";", typeof(BondOutDto).GetProperties().Select(f => f.Name));
+            
+        var stream = new MemoryStream();
+        await using var writer = new StreamWriter(stream, Encoding.UTF8, leaveOpen: true);
+        await writer.WriteLineAsync(header).WaitAsync(ct);
+        await WriteBondOutDtoRows(dtos, writer, ct);
+        await writer.FlushAsync(ct).WaitAsync(ct);
+        stream.Position = 0;
+
+        return stream;
+    }
+
+    private async Task<List<BondInDto>> GetBondInDtoRows(StreamReader reader, CancellationToken ct)
+    {
         var rowNumber = 0;
+        List<BondInDto> res = [];
         while (!reader.EndOfStream)
         {
             rowNumber++;
@@ -52,7 +64,7 @@ public class StreamMapper : IStreamMapper
             try
             {
                 var bond = GetBondFromLine(values);
-                rows.Add(bond);
+                res.Add(bond);
             }
             catch (Exception ex)
             {
@@ -64,33 +76,36 @@ public class StreamMapper : IStreamMapper
                     values[0]);
             }
         }
-        return rows;
+
+        return res;
     }
 
-    public async Task<Stream> WriteStreamAsync(IEnumerable<BondOutDto> dtos, CancellationToken ct = default)
+    private async Task HandleHeader(StreamReader reader, CancellationToken ct)
     {
-        var header =
-            string.Join(";", typeof(BondOutDto).GetProperties().Select(f => f.Name));
-            
-        var stream = new MemoryStream();
-        await using var writer = new StreamWriter(stream, Encoding.UTF8, leaveOpen: true);
-
-        await writer.WriteLineAsync(header).WaitAsync(ct);
-
+        var header = await reader.ReadLineAsync(ct);
+        if (!ExpectedHeader.Equals(header, StringComparison.InvariantCultureIgnoreCase))
+        {
+            _logger.LogError("Expected header to be: {ExpectedHeader}, " +
+                             "but received: {ActualHeader}.",
+                ExpectedHeader,
+                header);
+            throw new BondParserException("Expected valid header");
+        }
+    }
+    
+    private static async Task WriteBondOutDtoRows(IEnumerable<BondOutDto> dtos, StreamWriter writer, CancellationToken ct)
+    {
         foreach (var dto in dtos)
         {
             ct.ThrowIfCancellationRequested();
 
-            var line = $"{dto.BondId};{dto.Issuer};{dto.Type};{Math.Round(dto.PresentedValue, 2)};{dto.Rating};{dto.DeskNotes}";
+            var line = $"{dto.BondID};{dto.Issuer};{dto.Type};" +
+                       $"{Math.Round(dto.PresentedValue, 2).ToString(CultureInfo.InvariantCulture)};" +
+                       $"{dto.Rating};{dto.DeskNotes}";
             await writer.WriteLineAsync(line).WaitAsync(ct);
         }
-
-        await writer.FlushAsync(ct).WaitAsync(ct);
-        stream.Position = 0;
-
-        return stream;
     }
-    
+
     private static BondInDto GetBondFromLine(string[] values)
     {
         return new BondInDto(
@@ -98,25 +113,11 @@ public class StreamMapper : IStreamMapper
             values[1],
             values[2],
             int.Parse(values[3]),
-            GetEnumFromDescription<PaymentFrequency>(values[4]),
+            EnumHelper.GetEnumFromDescription<PaymentFrequency>(values[4]),
             values[5],
-            GetEnumFromDescription<BondType>(values[6]),
+            EnumHelper.GetEnumFromDescription<BondType>(values[6]),
             double.Parse(values[7], NumberStyles.Number, CultureInfo.InvariantCulture),
             double.Parse(values[8], NumberStyles.Number, CultureInfo.InvariantCulture),
             values[9]);
-    }
-    
-    private static T GetEnumFromDescription<T>(string description) where T : Enum
-    {
-        foreach (var field in typeof(T).GetFields())
-        {
-            var attr = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
-            if ((attr != null && attr.Description.Equals(description, StringComparison.OrdinalIgnoreCase)) ||
-                field.Name.Equals(description, StringComparison.OrdinalIgnoreCase))
-            {
-                return (T)field.GetValue(null)!;
-            }
-        }
-        throw new ArgumentException($"'{description}' does not match any value of enum {typeof(T).Name}");
     }
 }

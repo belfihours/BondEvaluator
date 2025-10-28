@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BondEvaluator.Domain", "Bon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BondEvaluator.Domain.Test", "BondEvaluator.Domain.Test\BondEvaluator.Domain.Test.csproj", "{544D3D20-C639-403E-8700-B55185DFED9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BondEvaluator.Infrastructure.Test", "BondEvaluator.Infrastructure.Test\BondEvaluator.Infrastructure.Test.csproj", "{5B2500A9-B248-481D-88FC-7E0DC201D899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{544D3D20-C639-403E-8700-B55185DFED9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544D3D20-C639-403E-8700-B55185DFED9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544D3D20-C639-403E-8700-B55185DFED9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2500A9-B248-481D-88FC-7E0DC201D899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2500A9-B248-481D-88FC-7E0DC201D899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2500A9-B248-481D-88FC-7E0DC201D899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2500A9-B248-481D-88FC-7E0DC201D899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{00F5D7D3-50CC-4074-A80B-FFB39184D04F} = {AF5C4CE6-40BE-437E-9C35-45F4BCC929A3}
@@ -54,5 +60,6 @@ Global
 		{E73245A1-F943-4C3A-87BF-C4B12BDC51DC} = {2D68C42A-7DF0-4002-BB47-DED37774A49B}
 		{C050E8FC-3FA5-4D61-8ADE-5991825D8AC0} = {AF5C4CE6-40BE-437E-9C35-45F4BCC929A3}
 		{544D3D20-C639-403E-8700-B55185DFED9A} = {2D68C42A-7DF0-4002-BB47-DED37774A49B}
+		{5B2500A9-B248-481D-88FC-7E0DC201D899} = {2D68C42A-7DF0-4002-BB47-DED37774A49B}
 	EndGlobalSection
 EndGlobal

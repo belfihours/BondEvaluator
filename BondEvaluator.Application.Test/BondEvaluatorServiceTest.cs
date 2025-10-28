@@ -37,7 +37,7 @@ public class BondEvaluatorServiceTest
     {
         // Act
         var action = () => new BondEvaluatorService(
-            null,
+            null!,
             _streamMapperMock.Object,
             _rateParserMock.Object,
             _options);        
@@ -52,7 +52,7 @@ public class BondEvaluatorServiceTest
         // Act
         var action = () => new BondEvaluatorService(
             _loggerMock.Object,
-            null,
+            null!,
             _rateParserMock.Object,
             _options);        
         
@@ -67,7 +67,7 @@ public class BondEvaluatorServiceTest
         var action = () => new BondEvaluatorService(
             _loggerMock.Object,
             _streamMapperMock.Object,
-            null,
+            null!,
             _options);        
         
         // Assert
@@ -84,7 +84,7 @@ public class BondEvaluatorServiceTest
             _loggerMock.Object,
             _streamMapperMock.Object,
             _rateParserMock.Object,
-            null);        
+            null!);        
         
         // Assert
         Assert.Throws<ArgumentNullException>(action);

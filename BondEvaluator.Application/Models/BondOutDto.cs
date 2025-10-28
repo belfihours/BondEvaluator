@@ -3,7 +3,7 @@
 namespace BondEvaluator.Application.Models;
 
 public record BondOutDto(
-    string BondId,
+    string BondID,
     string Issuer,
     BondType Type,
     double PresentedValue,
