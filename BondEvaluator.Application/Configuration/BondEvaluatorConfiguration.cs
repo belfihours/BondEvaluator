@@ -3,5 +3,5 @@
 public class BondEvaluatorConfiguration
 {
     public static readonly string Section = "BondEvaluator";
-    public required double InflationRate { get; set; }
+    public required double InflationRate { get; init; }
 }

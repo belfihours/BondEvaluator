@@ -45,7 +45,7 @@ public class BondEvaluation
         {
             return Math.Pow((1 + data.Rate), data.YearsToMaturity);
         }
-        // Since it is not otherwise specified, I assume I can treat Bond as Inflation-Linked to calculate PV
+        // Since it is not otherwise specified, I assume I can treat Inflation-Linked as Bond to calculate PV
         var cpp = data.Rate / data.PaymentsPerYear;
         var n = data.YearsToMaturity * data.PaymentsPerYear;
         return Math.Pow((1 + cpp), n);
