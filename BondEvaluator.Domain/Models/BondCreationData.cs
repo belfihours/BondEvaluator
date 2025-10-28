@@ -9,4 +9,5 @@ public record BondCreationData(
     double YearsToMaturity,
     int FaceValue,
     double DiscountFactor,
+    string Rating,
     string DeskNotes);

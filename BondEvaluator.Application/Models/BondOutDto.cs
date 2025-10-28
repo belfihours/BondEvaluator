@@ -7,4 +7,5 @@ public record BondOutDto(
     string Issuer,
     BondType Type,
     double PresentedValue,
+    string Rating,
     string DeskNotes);

@@ -8,27 +8,26 @@ public class BondEvaluation
     public string Issuer {get; }
     public BondType Type { get; }
     public double PresentedValue {get; }
+    public string Rating { get; set; }
     public string DeskNotes {get; }
     private BondEvaluation(
         string bondId,
         string issuer,
         BondType type,
         double presentedValue,
+        string rating,
         string deskNotes)
     {
         BondId = bondId;
         Issuer = issuer;
         Type = type;
         PresentedValue = presentedValue;
+        Rating = rating;
         DeskNotes = deskNotes;
     }
 
     public static BondEvaluation Create(BondCreationData data)
     {
-        if (data.BondId == "B082")
-        {
-            ;
-        }
         var factor = GetFactor(data);
         var pv = factor * data.FaceValue * data.DiscountFactor;
         return new BondEvaluation(
@@ -36,6 +35,7 @@ public class BondEvaluation
             data.Issuer,
             data.Type,
             pv,
+            data.Rating,
             data.DeskNotes);
     }
 

@@ -2,5 +2,5 @@
 
 public interface IRateParser
 {
-    bool TryParseRate(string? text, double inflationBase, out double result);
+    bool TryParseRate(string text, double inflationBase, out double result);
 }

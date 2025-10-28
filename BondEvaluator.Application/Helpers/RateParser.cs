@@ -5,8 +5,6 @@ namespace BondEvaluator.Application.Helpers;
 
 public class RateParser : IRateParser
 {
-    private static readonly CultureInfo UsCulture = new  CultureInfo("en-US");
-
     //TODO: TEST THAT
     /// <summary>
     /// Try to parse input rates in final rates
@@ -16,7 +14,7 @@ public class RateParser : IRateParser
     /// <param name="inflationBase"> Inflation to add in case of Inflation-linked rates </param>
     /// <param name="result"></param>
     /// <returns></returns>
-    public bool TryParseRate(string? text, double inflationBase, out double result)
+    public bool TryParseRate(string text, double inflationBase, out double result)
     {
         result = 0.0;
         double prc;
@@ -54,10 +52,9 @@ public class RateParser : IRateParser
             return false;
 
         // Remove last character (%)
-        if (num.EndsWith("%", StringComparison.Ordinal))
+        if (num.EndsWith('%'))
             num = num[..^1];
-        //TODO: try invariantculture to get . instead of ,
-        if (!double.TryParse(num, NumberStyles.Number, UsCulture, out var value))
+        if (!double.TryParse(num, NumberStyles.Number, CultureInfo.InvariantCulture, out var value))
             return false;
 
         result = value / 100.0;
