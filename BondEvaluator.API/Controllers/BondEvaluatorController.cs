@@ -27,7 +27,7 @@ public class BondEvaluatorController : ControllerBase
         return File(
             fileStream: res,
             contentType: "text/csv",
-            fileDownloadName: "export.csv"
+            fileDownloadName: $"export_{DateTime.Now:yyyy-MM-dd_HH-mm}.csv"
         );
     }
 }
