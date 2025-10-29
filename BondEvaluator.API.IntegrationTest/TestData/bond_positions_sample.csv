@@ -1,0 +1,101 @@
+BondID;Issuer;Rate;FaceValue;PaymentFrequency;Rating;Type;YearsToMaturity;DiscountFactor;DeskNotes
+B001;Healthcare Trust;Inflation+0.92%;500;Quarterly;BBB+;Inflation-Linked;13.7;0.54715;Indexing details unclear
+B002;National Utilities;3.10%;500;Semi-Annual;A;Bond;5.5;0.78498;Corporate bond
+B003;Netherlands Gov;Inflation+0.78%;1000;Semi-Annual;AA;Inflation-Linked;10;0.64393;Indexing details unclear
+B004;EuroRail;3.90%;100;None;A;Zero-Coupon;4.9;0.80599;Issued at discount
+B005;EuroBank;Inflation+1.42%;500;Annual;A;Inflation-Linked;13.1;0.56179;Indexing details unclear
+B006;Green Infrastructure;2.60%;5000;None;A-;Zero-Coupon;4.4;0.82393;Issued at discount
+B007;TelecomNet;Inflation+0.97%;500;Quarterly;BBB+;Inflation-Linked;2.2;0.9077;Indexing details unclear
+B008;Healthcare Trust;6.50%;100;Annual;AA;Bond;12.3;0.58193;Standard issue
+B009;TechHold;2.80%;500;None;A-;Zero-Coupon;7.9;0.70629;Issued at discount
+B010;CityWater;5.70%;1000;Semi-Annual;A-;Bond;4.9;0.80599;Standard issue
+B011;Acme Corp;Inflation+1.28%;100;Semi-Annual;A+;Inflation-Linked;10.9;0.61892;Indexing details unclear
+B012;National Utilities;5.40%;500;Semi-Annual;BBB+;Bond;1.5;0.93611;Corporate bond
+B013;Netherlands Gov;4.20%;500;Semi-Annual;A;Bond;10.6;0.62714;Corporate bond
+B014;City of Rotterdam;Inflation+1.04%;2000;Annual;A+;Inflation-Linked;8.1;0.7001;Indexing details unclear
+B015;National Utilities;4.10%;2000;Quarterly;AA;Bond;8.8;0.67885;Corporate bond
+B016;AgriFund;4.00%;2000;Quarterly;A+;Bond;11.1;0.61349;Corporate bond
+B017;Healthcare Trust;Inflation+0.56%;5000;Annual;A;Inflation-Linked;12;0.58966;Indexing details unclear
+B018;Netherlands Gov;2.70%;500;None;BBB+;Zero-Coupon;3.7;0.84971;Issued at discount
+B019;EuroRail;Inflation+0.66%;500;Quarterly;BBB+;Inflation-Linked;6.1;0.76452;Indexing details unclear
+B020;National Utilities;Inflation+0.38%;2000;Annual;A+;Inflation-Linked;1.8;0.92383;Indexing details unclear
+B021;Solar Future;Inflation+1.05%;5000;Annual;BBB+;Inflation-Linked;5.2;0.79542;Indexing details unclear
+B022;City of Rotterdam;5.40%;500;Annual;BBB+;Bond;3.8;0.84598;Corporate bond
+B023;EuroRail;3.50%;100;Semi-Annual;BBB;Bond;8.4;0.69091;Corporate bond
+B024;Netherlands Gov;5.10%;5000;Semi-Annual;AA;Bond;7.9;0.70629;Standard issue
+B025;AgriFund;2.90%;100;Quarterly;AAA;Bond;14.9;0.519;Corporate bond
+B026;TelecomNet;2.20%;100;Semi-Annual;BBB+;Bond;12.8;0.56926;Standard issue
+B027;Netherlands Gov;2.80%;500;None;A-;Zero-Coupon;12.9;0.56676;Issued at discount
+B028;Oceanic Shipping;4.90%;2000;Quarterly;A-;Bond;11.1;0.61349;Standard issue
+B029;Acme Corp;2.60%;2000;Annual;BBB+;Bond;1.9;0.91977;Corporate bond
+B030;TelecomNet;Inflation+0.53%;1000;Quarterly;BBB+;Inflation-Linked;2.9;0.88016;Indexing details unclear
+B031;AgriFund;4.10%;500;Quarterly;A+;Bond;1.2;0.94855;Standard issue
+B032;AgriFund;4.50%;5000;None;AA-;Zero-Coupon;4.9;0.80599;Issued at discount
+B033;EuroBank;2.00%;5000;None;AAA;Zero-Coupon;3.5;0.85722;Issued at discount
+B034;CityWater;6.70%;2000;Annual;A;Bond;3.9;0.84226;Standard issue
+B035;EuroRail;4.40%;1000;Annual;A;Bond;1.5;0.93611;Corporate bond
+B036;City of Rotterdam;2.20%;100;None;BBB;Zero-Coupon;12.2;0.5845;Issued at discount
+B037;Oceanic Shipping;4.30%;100;None;A;Zero-Coupon;1.6;0.932;Issued at discount
+B038;Oceanic Shipping;2.00%;500;Annual;AAA;Bond;10.5;0.62991;Corporate bond
+B039;Acme Corp;3.30%;500;None;A+;Zero-Coupon;9.6;0.65537;Issued at discount
+B040;City of Rotterdam;2.70%;1000;None;AAA;Zero-Coupon;11.9;0.59227;Issued at discount
+B041;National Utilities;3.90%;500;None;A+;Zero-Coupon;4.1;0.83488;Issued at discount
+B042;National Utilities;2.10%;100;Quarterly;AA-;Bond;7.4;0.722;Standard issue
+B043;Netherlands Gov;3.70%;1000;None;BBB;Zero-Coupon;7.1;0.7316;Issued at discount
+B044;Global Energy;Inflation+0.49%;1000;Semi-Annual;BBB;Inflation-Linked;6.7;0.7446;Indexing details unclear
+B045;TelecomNet;2.30%;1000;None;AA-;Zero-Coupon;13;0.56427;Issued at discount
+B046;Global Energy;2.60%;2000;None;AA-;Zero-Coupon;8.9;0.67587;Issued at discount
+B047;City of Rotterdam;5.60%;5000;Quarterly;AA;Bond;11.6;0.60014;Corporate bond
+B048;Global Energy;2.10%;1000;None;A+;Zero-Coupon;8.6;0.68486;Issued at discount
+B049;TelecomNet;Inflation+1.1%;500;Quarterly;AA;Inflation-Linked;12.9;0.56676;Indexing details unclear
+B050;Healthcare Trust;6.00%;5000;Annual;AAA;Bond;14;0.53997;Corporate bond
+B051;AgriFund;5.10%;1000;Annual;BBB+;Bond;5.9;0.77128;Standard issue
+B052;Oceanic Shipping;Inflation+0.74%;5000;Annual;AA;Inflation-Linked;7.7;0.71253;Indexing details unclear
+B053;City of Rotterdam;Inflation+1.33%;2000;Quarterly;AAA;Inflation-Linked;10.3;0.63548;Indexing details unclear
+B054;Green Infrastructure;Inflation+0.56%;5000;Quarterly;A-;Inflation-Linked;12.3;0.58193;Indexing details unclear
+B055;Netherlands Gov;Inflation+1.32%;2000;Semi-Annual;BBB;Inflation-Linked;4.2;0.83121;Indexing details unclear
+B056;TechHold;4.10%;100;Semi-Annual;A+;Bond;4;0.83856;Standard issue
+B057;Green Infrastructure;Inflation+1.12%;5000;Annual;A-;Inflation-Linked;9.7;0.65249;Indexing details unclear
+B058;Oceanic Shipping;3.10%;2000;None;A;Zero-Coupon;11.3;0.60812;Issued at discount
+B059;AgriFund;Inflation+1.29%;5000;Semi-Annual;AA;Inflation-Linked;7.8;0.7094;Indexing details unclear
+B060;Healthcare Trust;Inflation+0.32%;5000;Semi-Annual;AA-;Inflation-Linked;6;0.7679;Indexing details unclear
+B061;EuroBank;6.00%;1000;Quarterly;AAA;Bond;9.8;0.64962;Corporate bond
+B062;TelecomNet;3.90%;5000;None;AA-;Zero-Coupon;3.2;0.86862;Issued at discount
+B063;AgriFund;Inflation+0.93%;2000;Annual;AAA;Inflation-Linked;2.9;0.88016;Indexing details unclear
+B064;Oceanic Shipping;6.10%;5000;Semi-Annual;AA;Bond;5.8;0.77469;Corporate bond
+B065;Netherlands Gov;Inflation+1.29%;2000;Semi-Annual;BBB+;Inflation-Linked;6.4;0.75449;Indexing details unclear
+B066;Healthcare Trust;3.50%;1000;None;AA-;Zero-Coupon;3;0.8763;Issued at discount
+B067;EuroBank;Inflation+0.96%;2000;Semi-Annual;AA-;Inflation-Linked;8.7;0.68185;Indexing details unclear
+B068;Global Energy;5.10%;100;Quarterly;AA;Bond;14.7;0.52359;Standard issue
+B069;Solar Future;Inflation+1.41%;1000;Quarterly;AA-;Inflation-Linked;4.6;0.8167;Indexing details unclear
+B070;City of Rotterdam;4.00%;100;None;A;Zero-Coupon;2.9;0.88016;Issued at discount
+B071;Solar Future;2.20%;1000;None;A+;Zero-Coupon;1.8;0.92383;Issued at discount
+B072;Global Energy;6.70%;2000;Annual;A-;Bond;7.7;0.71253;Corporate bond
+B073;CityWater;5.60%;100;Semi-Annual;AAA;Bond;9.9;0.64677;Corporate bond
+B074;EuroBank;2.80%;500;None;BBB+;Zero-Coupon;12.8;0.56926;Issued at discount
+B075;Green Infrastructure;Inflation+1.39%;100;Annual;AAA;Inflation-Linked;4.9;0.80599;Indexing details unclear
+B076;Global Energy;4.10%;5000;None;BBB+;Zero-Coupon;5.9;0.77128;Issued at discount
+B077;Oceanic Shipping;Inflation+1.28%;100;Semi-Annual;AA;Inflation-Linked;6.9;0.73807;Indexing details unclear
+B078;EuroRail;4.10%;5000;None;BBB+;Zero-Coupon;4.4;0.82393;Issued at discount
+B079;Acme Corp;2.10%;1000;None;A-;Zero-Coupon;11.2;0.6108;Issued at discount
+B080;Global Energy;4.20%;500;None;BBB+;Zero-Coupon;5.2;0.79542;Issued at discount
+B081;Healthcare Trust;Inflation+0.74%;5000;Quarterly;A-;Inflation-Linked;5.7;0.7781;Indexing details unclear
+B082;AgriFund;3.80%;5000;Semi-Annual;A+;Bond;9.3;0.66408;Corporate bond
+B083;National Utilities;Inflation+0.77%;2000;Quarterly;A-;Inflation-Linked;9.1;0.66995;Indexing details unclear
+B084;Acme Corp;4.30%;500;None;AA-;Zero-Coupon;3.5;0.85722;Issued at discount
+B085;City of Rotterdam;Inflation+0.35%;1000;Quarterly;BBB;Inflation-Linked;8.2;0.69702;Indexing details unclear
+B086;Acme Corp;Inflation+0.62%;500;Quarterly;AA;Inflation-Linked;8.8;0.67885;Indexing details unclear
+B087;Acme Corp;3.40%;100;None;AAA;Zero-Coupon;12.8;0.56926;Issued at discount
+B088;National Utilities;3.10%;500;None;AA;Zero-Coupon;5.5;0.78498;Issued at discount
+B089;Acme Corp;Inflation+0.34%;1000;Semi-Annual;BBB+;Inflation-Linked;14.7;0.52359;Indexing details unclear
+B090;TelecomNet;2.90%;100;None;A;Zero-Coupon;10.7;0.62439;Issued at discount
+B091;TechHold;Inflation+1.16%;2000;Annual;AA;Inflation-Linked;11.4;0.60544;Indexing details unclear
+B092;City of Rotterdam;Inflation+1.42%;1000;Annual;AA;Inflation-Linked;3.4;0.861;Indexing details unclear
+B093;CityWater;4.10%;500;None;BBB;Zero-Coupon;10.9;0.61892;Issued at discount
+B094;TechHold;4.30%;1000;Annual;A;Bond;2.6;0.89186;Corporate bond
+B095;EuroRail;3.10%;100;None;BBB+;Zero-Coupon;4.7;0.81312;Issued at discount
+B096;Green Infrastructure;Inflation+0.74%;5000;Quarterly;AA;Inflation-Linked;8.2;0.69702;Indexing details unclear
+B097;EuroBank;Inflation+1.44%;5000;Semi-Annual;A-;Inflation-Linked;11.2;0.6108;Indexing details unclear
+B098;TelecomNet;2.00%;2000;Annual;A+;Bond;7.9;0.70629;Corporate bond
+B099;Acme Corp;6.70%;2000;Quarterly;AA;Bond;14.2;0.53524;Corporate bond
+B100;CityWater;4.60%;100;Annual;AA;Bond;5;0.80245;Corporate bond
