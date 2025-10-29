@@ -1,6 +1,8 @@
 # Bond Evaluator
 Welcome to Bond Evaluator, a simple REST API that returns bond evaluations based on input csv.
-The output will be another csv file containing [BondID, Type, PresentValue] (mandatory ones) + [Issuer, Rating, DeskNotes] (this data can be useful in investment meetings) 
+The output will be another csv file containing [BondID, Type, PresentValue] (mandatory ones) + [Issuer, Rating, DeskNotes] (this data can be useful in investment meetings)
+Since I think less data it's better than no data at all, I decided to just skip all the csv rows that could be corrupted or not correctly parsed, logging the problem.
+This can be easily reverted in case of different businesses requirements.
 
 # Usage
 You can clone code and run API with an IDE (e.g. Visual Studio, Rider), or simpler just run the Docker image
